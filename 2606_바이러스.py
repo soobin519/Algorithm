@@ -21,7 +21,16 @@ def bfs(dic, start):
                 visited.append(i)
                 queue.append(i)
 
+#dfs
+def dfs(dic, start):
+    for i in dic[start]:
+        if i not in visited:
+            visited.append(i)
+            dfs(dic,i)
+
+
 visited = []
 bfs(dic,1)
+dfs(dic,1)
 print(len(visited)-1)
     
