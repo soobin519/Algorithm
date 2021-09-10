@@ -1,42 +1,40 @@
 import sys
 input = sys.stdin.readline
-from collections import deque
+sys.setrecursionlimit(3000)
+
 
 T = int(input())
 dx = [1, 0, -1, 0]
 dy = [0, 1, 0, -1]
+#dfs     
+def dfs(x,y,visited):
+    visited[x][y]= 1
+        
+    for i in range(4):
+        xx = x+dx[i]
+        yy = y+dy[i]
+
+        if 0<=xx<M and 0<=yy<N:
+            if visited[xx][yy]==0 and land[xx][yy]==1:
+                dfs(xx,yy, visited)
 
 for i in range(T):
     M, N, K = map(int, input().split()) #가로, 세로, 개수
 
-    land = [[0]*(N) for _ in range(M)]
-    queue = deque()
+    land = [[0]*N for _ in range(M)]
+    visited = [[0]*N for _ in range(M)]
     cnt = 0
-    
-    #땅 출력 
+
+    #배추밭 만들기 
     for i in range(K):
         a, b= map(int,input().split())
         land[a][b] = 1
         
-    #방문체크: BFS
+
+    #dfs함수 실행
     for m in range(M):
         for n in range(N):
-            if land[m][n]==1:
-                queue.append((m,n))
-                land[m][n]=2
-
-                while queue:
-                    x, y =queue.popleft()
-                
-                    for i in range(4):
-                        xx = x+dx[i]
-                        yy = y+dy[i]
-
-                        if 0<=xx<M and 0<=yy<N:
-                            if land[xx][yy]==1:
-                                queue.append((xx,yy))
-                                land[xx][yy]=2
-                else: cnt+=1
+            if visited[m][n] ==0 and land[m][n]==1:
+                dfs(m,n,visited)
+                cnt+=1
     print(cnt)
-                
-        
