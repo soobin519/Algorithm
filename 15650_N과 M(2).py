@@ -4,17 +4,15 @@ input=sys.stdin.readline
 N,M=map(int, input().split())
 s=[]
 
-def dfs():
+def dfs(start):
     if len(s)==M:
         print(' '.join(map(str,s)))
         return
-    i=1
-    for i in range(i,N):
+    
+    for i in range(start,N+1):
         if i not in s:
             s.append(i)
-            print(s)
-            dfs()
+            dfs(i+1)
             s.pop()
-            print(s)
-            print("-----")
-dfs()
+
+dfs(1)
