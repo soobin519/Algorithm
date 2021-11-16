@@ -7,7 +7,7 @@ max_r= 0
          
 def func(result):
     global max_r
-    print("W",w)
+    #print("W",w)
     if len(w)==2: #중단 조건
         max_r = max(max_r, result)
         return
