@@ -5,9 +5,9 @@ answer=0
 stack=[]
 
 for i in range(len(data)):
-    print (stack)
-    print("Tmp",tmp)
-    print("answer",answer)
+    #print (stack)
+    #print("Tmp",tmp)
+    #print("answer",answer)
 
     if data[i] == "(":
         stack.append(data[i])

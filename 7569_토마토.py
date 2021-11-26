@@ -30,7 +30,7 @@ def bfs():
             yy = y+dy[i]
 
             if 0<=zz<h and 0<=xx<n and 0<=yy<m: #index가 범위 안에 있으면 
-                if box[zz][xx][yy]==0:
+                if box[zz][xx][yy]==0: #안익은 토마토면 
                     box[zz][xx][yy]=box[z][x][y]+1 #토마토 익으면서 하루 지남 
                     queue.append([zz,xx,yy]) #새로 익은 토마토 위치 저장
 bfs()

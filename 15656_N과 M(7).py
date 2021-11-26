@@ -16,4 +16,3 @@ def func():
         result.pop()
 
 func()
-    

@@ -37,6 +37,3 @@ def bfs(start):
 
 bfs(1)
 print(visited[100])
-경                 
-
-            
