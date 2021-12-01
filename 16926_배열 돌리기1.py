@@ -2,12 +2,13 @@ import sys
 input = sys.stdin.readline
 
 n,m,r  = map(int, input().split())
-data = [ list(map(int,input().split())) for _ in range(n)]
 a=min(n,m)//2
+data = [ list(map(int,input().split())) for _ in range(n)]
 
-#회전 
-def rotate():
+#r번 회전 
+for k in range(r): 
     for i in range(a): #줄별로 회전시킴
+
         temp = data[i][i] #가장 첫번째 데이터           
                 
         # 제일 윗줄 오->왼 
@@ -24,10 +25,6 @@ def rotate():
             data[j+1][i] = data[j][i]     
 
         data[i+1][i] = temp
-
-for i in range(a):
-    r1 = (n+m)-4
-
 
 #결과 출력   
 for row in data:
