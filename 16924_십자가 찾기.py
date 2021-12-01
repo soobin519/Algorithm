@@ -5,7 +5,6 @@ from collections import deque
 n,m = map(int, input().split())
 board = [list(sys.stdin.readline().strip()) for n in range(n)]
 vi = [[0 for _ in range(m)] for _ in range(n)] #*표 방문 등록 
-
 result = []
 
 #탐색할 방향 
@@ -33,7 +32,7 @@ def bfs(i,j):
         for _ in range(4): #네방향 모두 탐색
             x,y,k = queue.popleft()
             vi[x][y] = 1
-            #star_made +=1
+            
             nx=x+dx[k]
             ny=y+dy[k]
         
