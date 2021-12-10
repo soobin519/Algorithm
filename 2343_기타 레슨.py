@@ -4,7 +4,7 @@ input = sys.stdin.readline
 n,m = map(int, input().split())
 lec = list(map(int, input().split()))
 
-start =max(lec)
+start =max(lec) #최소 한개의 강의는 들어야하므로 
 end = sum(lec)
 result = 1000001
 
@@ -28,7 +28,7 @@ while start<=end :
     if i<=m:
         end = mid-1
         result = min(result,mid)
-    #사용한 블루레이 개수를 초과한 경우,
+    #사용한 블루레이 개수를 초과한 경우,강의 수용을 늘려야하므로 
     else:
         start= mid+1
 

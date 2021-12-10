@@ -15,7 +15,7 @@ while True:
         elif a=="}":
             if "{" not in stack:
                 cnt+=1
-                stack.append("{") #바궈줌 
+                stack.append("{") #바꿔줌 
             else:
                 stack.pop()
 

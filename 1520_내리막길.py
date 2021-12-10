@@ -14,7 +14,7 @@ dy = [1,-1,0,0]
 
 def dfs(x,y):
     if x ==m-1 and y==n-1: #목표 지점 도착
-        return 1
+        return 1 #visited[m-1][n-1] =1 
 
     ans=0 
     for i in range(4):
