@@ -3,7 +3,6 @@ input = sys.stdin.readline
 
 n = int(input())
 m = int(input())
-#vip = [ int(input()) for _ in range(m)]
 
 #i번째 좌석에서 앉을 수 있는 방법의 가짓수
 #피보나치 원리 이용 
@@ -17,8 +16,7 @@ result=1
 pre = 0
 
 for i in range(m):
-    tmp=int(input())
-    
+    tmp=int(input())#vip    
     result *= d[tmp-pre-1] #곱의법칙 
     pre = tmp                
 result*=d[n-pre] #마지막 
