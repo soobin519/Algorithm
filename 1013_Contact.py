@@ -8,7 +8,7 @@ for i in range(int(input())):
 
     while len(s)>0:
         if s.startswith("100"):
-            s = s[3:] #"100"제
+            s = s[3:] #"100"제거 
 
             while len(s)>0 and s.startswith("0"): #0+에 0이 계속 나오는 경우 
                 s=s[1:] #맨 처음 "0" 제거 
@@ -27,7 +27,7 @@ for i in range(int(input())):
                     s=s[1:]
     
         elif s. startswith("01"):
-            s = s[2:]거 #"01"제거 
+            s = s[2:] #"01"제거 
 
         else:
             result=False
