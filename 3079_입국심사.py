@@ -21,7 +21,6 @@ while start<=end:
     else:
         result=mid
         end= mid-1 
-                  
 
 
 print(result)
